@@ -4,7 +4,9 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { path: '', component: () => import('pages/IndexPage.vue') },
+      { path: '/mediaEntry', name: 'mediaEntryPage', component: () => import('pages/mediaEntryPage.vue')},
+      { path: '/mediaEntry', name: 'newMediaEntryPage', component: () => import('pages/newMediaEntryPage.vue')}
     ]
   },
 
@@ -14,6 +16,7 @@ const routes = [
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue')
   }
+
 ]
 
 export default routes
