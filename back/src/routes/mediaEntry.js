@@ -18,5 +18,5 @@ router.get('/about', (req, res) => {
 
 router.get('/mediaEntry', findAll)
 
-router.pots('/mediaEntry', insertMediaEntry)
+router.post('/mediaEntry', insertMediaEntry)
 export default router

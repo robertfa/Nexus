@@ -12,7 +12,9 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          <router-link to="/" style="text-decoration: none; color: inherit;">
+            Nexus
+          </router-link>
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
