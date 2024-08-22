@@ -52,5 +52,8 @@ async function redireccionar() {
     <div>
         <q-btn :to="{name:'newMediaEntryPage'}" color="blue" text-color="black" label="Insertar ficha" />
     </div>
+    <div>
+        <q-btn :to="{name:'entryPage'}" color="blue" text-color="black" label="Ficha" />
+    </div>
     </q-page>
 </template>

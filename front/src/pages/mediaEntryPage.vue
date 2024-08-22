@@ -9,11 +9,13 @@ const fichas = ref([])
 onMounted(() => fetchMediaEntry())
 
 async function fetchMediaEntry() {
-	const response = await axios.get('api/mediaEntry/mediaEntry')
+	const response = await axios.get('api/mediaEntry')
 	fichas.value = response.data
 }
 
-
+function verDetalles(id) {
+  router.push({ name: 'entryPage', params: { id: id } });
+}
 </script>
 
 <template>

@@ -6,3 +6,7 @@ CREATE TABLE IF NOT EXISTS `mediaEntry` (
   `valoration` int(10) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO nexusdb.mediaEntry
+(id, title, cover, synopsis, valoration)
+VALUES(1, 'Titulo', 'Cover', 'Synopsis', 2);

@@ -6,7 +6,8 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: '/mediaEntry', name: 'mediaEntryPage', component: () => import('pages/mediaEntryPage.vue')},
-      { path: '/mediaEntry', name: 'newMediaEntryPage', component: () => import('pages/newMediaEntryPage.vue')}
+      { path: '/newMediaEntryPage', name: 'newMediaEntryPage', component: () => import('pages/newMediaEntryPage.vue')},
+      { path: '/entryPage/:id', name: 'entryPage', component: () => import('pages/entryPage.vue')}
     ]
   },
 

@@ -1,8 +1,10 @@
 import express from 'express'
+import bodyParser from 'express'
 // const express = require('express')
 import db from './config/db.js'
 const app = express()
 app.disable('x-powered-by')  // desactivar en la cabecera aparezxa expres
+
 await db.init()
 //import ficha from './controllers/ficha.js'
 import mediaEntry from './routes/mediaEntry.js'
@@ -19,6 +21,12 @@ app.get('/', function (request, response) {
                 ]
     response.json(books)
 })*/
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.use('/mediaEntry',mediaEntry)
 
