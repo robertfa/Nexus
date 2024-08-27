@@ -38,3 +38,31 @@ export async function insertMediaEntry(request, response) {
         response.status(500).json({ error: 'Error inserting media entry' });
     }
 }
+
+
+export async function updateMediaEntry(request, response) {
+
+
+    const { id } = request.params;
+    const { title,cover,synopsis } = request.body;
+    const query = ` UPDATE mediaEntry SET title = ?, cover = ?, synopsis = ?  WHERE id = ? `;
+    const values = [title,cover,synopsis,id];
+
+
+    try {
+        const result = await db.query(query, values);  // No desestructurar si result no es un array
+
+        // Verifica si `result` tiene `affectedRows` u otra propiedad que puedas utilizar
+        if (result.affectedRows === 0) {
+            return response.status(404).json({ error: 'Media entry not found' });
+        }
+
+        response.json({
+            message: 'Media entry updated successfully',
+            data: { id, title, cover, synopsis },
+        });
+    } catch (error) {
+        console.error('Error updating media entry:', error.message);
+        response.status(500).json({ error: 'Error updating media entry' });
+    }
+}

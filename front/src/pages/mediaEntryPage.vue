@@ -16,6 +16,10 @@ async function fetchMediaEntry() {
 function verDetalles(id) {
   router.push({ name: 'entryPage', params: { id: id } });
 }
+
+function editarFicha(id) {
+  router.push({ name: 'editEntryPage', params: { id: id } });
+}
 </script>
 
 <template>
@@ -30,6 +34,14 @@ function verDetalles(id) {
         <q-item-section>
           <q-item-label>{{ ficha.title }}</q-item-label>
           <q-item-label caption>{{ ficha.synopsis }}</q-item-label>
+        </q-item-section>
+        <q-item-section side right>
+          <q-btn 
+            flat 
+            round 
+            icon="edit" 
+            @click.stop="editarFicha(ficha.id)" 
+          />
         </q-item-section>
       </q-item>
     </q-list>

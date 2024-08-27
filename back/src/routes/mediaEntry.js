@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import {findAll,insertMediaEntry,findOne} from '../controllers/mediaEntry.js'
+import {findAll,insertMediaEntry,findOne,updateMediaEntry} from '../controllers/mediaEntry.js'
 /*
 // middleware that is specific to this router
 router.use((req, res, next) => {
@@ -22,4 +22,8 @@ router.get('/', findAll)
 router.get('/:id', findOne)
 
 router.post('/', insertMediaEntry)
+
+router.put('/:id', updateMediaEntry)
+
+
 export default router

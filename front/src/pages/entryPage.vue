@@ -9,7 +9,6 @@ const fichas = ref({});
 onMounted(() => fetchMediaEntry())
 
 async function fetchMediaEntry() {
-  console.log(route.params.id)
   const cardId = route.params.id
 
   try {
